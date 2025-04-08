@@ -1,5 +1,13 @@
-const fs = require('fs');
-fs.readFile("./data.txt","utf8",(err,data) =>{
-    if(err) throw err;
-    console.log("the read data",data);
-})
+const http=require('http');
+
+const server=http.createServer((req,res)=>{
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    res.end(`<h1 style='background-color: black;color: white;'>Hello World</h1>`);
+});
+
+server.listen(9000,(err)=>{
+    if(err) 
+        throw err;
+    console.log('Server is running at http://localhost:9000');
+});

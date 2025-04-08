@@ -1,7 +1,11 @@
-const fs = require('fs');
-const data = " i am the data"
+const http= require("http");
 
-fs.writeFile("./data.txt",data,(err) =>{
-    if(err) throw err;
-    console.log("File saved!");
-})
+const server= http.createServer((req,res)=>{
+    res.writeHead(200,{'Content-Type':'text/plain'});
+    res.end("Hello World");  //send response to client   
+ 
+});
+
+server.listen(9000,()=>{
+    console.log("Server is running on port 9000");  
+});

@@ -1,2 +1,3 @@
-const a ="w"
-console.log(a)
+const a ="welcome to the backend server";
+
+console.log(a);
